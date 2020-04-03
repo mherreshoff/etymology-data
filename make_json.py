@@ -26,7 +26,8 @@ for lang_word in sorted(etymologies.keys()):
         get_languages(lang_word, etym_languages)
         result[word] = sorted(etym_languages)
 
-result['_EVERY_LANGUAGE'] = sorted(every_language)
+with open('language_list.json', 'w') as f:
+  json.dump(sorted(every_language), f)
 
 
 with open('languages.json', 'w') as f:
